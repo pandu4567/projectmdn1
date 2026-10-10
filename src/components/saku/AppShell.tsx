@@ -14,9 +14,13 @@ export function AppShell({ children, title }: { children: ReactNode; title?: str
   return (
     <div className="min-h-screen bg-background">
       <main className="mx-auto max-w-md px-4 pb-32 pt-6">
+        <header className="mb-5 border-b border-border pb-3">
+          <p className="text-lg font-extrabold">EASY FINMA</p>
+          <p className="text-[11px] text-muted-foreground">Financial Management</p>
+        </header>
         {title && <h1 className="mb-4 text-2xl font-extrabold tracking-tight">{title}</h1>}
         {children}
-        <footer className="mt-8 text-center text-[11px] text-muted-foreground">© 2026 Money Spectrum Hub - Five Color Finance</footer>
+        <footer className="mt-8 text-center text-[11px] text-muted-foreground">© 2026 EASY FINMA - Financial Management</footer>
       </main>
       <nav className="fixed inset-x-4 bottom-4 z-40 mx-auto max-w-md rounded-2xl border border-border bg-card shadow-float">
         <ul className="grid grid-cols-5">

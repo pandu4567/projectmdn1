@@ -12,12 +12,12 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SAKU 5 WARNA PRO — Atur Uang Jadi 5 Kantong" },
-      { name: "description", content: "Bagi pendapatanmu ke 5 kantong warna dan uji di simulasi Perjalanan 1 Tahun." },
-      { property: "og:title", content: "SAKU 5 WARNA PRO" },
+      { title: "EASY FINMA - Financial Management Made Easy" },
+      { name: "description", content: "EASY FINMA (FINMA = Financial Management) - Kelola keuangan 5 saku" },
+      { property: "og:title", content: "EASY FINMA" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:description", content: "Bagi pendapatanmu ke 5 kantong warna dan uji di simulasi Perjalanan 1 Tahun." },
+      { property: "og:description", content: "EASY FINMA (FINMA = Financial Management) - Kelola keuangan 5 saku" },
     ],
   }),
   component: Beranda,

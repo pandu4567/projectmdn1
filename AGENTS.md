@@ -11,4 +11,6 @@
 
 - Keep simulation audio browser-only and initialize it after an explicit sound-toggle gesture, so SSR remains safe and autoplay restrictions are respected.
 - Scale the event-card wrapper separately from its falling animation, so mobile sizing does not get overridden by animated transforms.
-- Keep investment statistics separate from legacy simulation trading state; public server functions fetch allowlisted market symbols and return unavailable data instead of fabricated prices.
+- Keep investment statistics separate from legacy simulation trading state; educational categories use a browser-safe static catalog without API calls, while public server functions fetch allowlisted market symbols for other categories and report unavailability honestly.
+- Render brand metadata through TanStack route heads and the web manifest; there is no index.html in the SSR project.
+- Migrate legacy browser storage on first read, preserve newer values and malformed originals, and synchronize profile expense/allocation slices on save to avoid data loss.

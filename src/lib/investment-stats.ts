@@ -7,21 +7,37 @@ export interface Instrument { id: string; name: string; category: InvestmentCate
 export const INSTRUMENTS: Instrument[] = [
   { id: "rd-pu", name: "Reksadana Pasar Uang", category: "reksadana", detail: "Risiko rendah · Bibit / Bareksa" },
   { id: "rd-pt", name: "Reksadana Pendapatan Tetap", category: "reksadana", detail: "Risiko sedang · Bibit / Bareksa" },
-  { id: "rd-cp", name: "Reksadana Campuran", category: "reksadana", detail: "Risiko tinggi · Bibit / Bareksa" },
-  { id: "rd-sh", name: "Reksadana Saham", category: "reksadana", detail: "Risiko sangat tinggi · Bibit / Bareksa" },
+  { id: "rd-cp", name: "Reksadana Campuran", category: "reksadana", detail: "Risiko Sedang-Tinggi · Bibit / Bareksa" },
+  { id: "rd-sh", name: "Reksadana Saham", category: "reksadana", detail: "Risiko Tinggi · Bibit / Bareksa" },
   ...["BBCA", "BBRI", "TLKM", "ASII", "GOTO", "BREN", "CUAN", "AMMN", "BMRI", "BBNI"].map((id) => ({ id, name: id, category: "saham" as const, symbol: `${id}.JK`, detail: "Bursa Efek Indonesia · IDR / lembar" })),
   { id: "BTC", name: "BTC · Bitcoin", category: "crypto", symbol: "BTC-USD", detail: "Kripto · USD · volatilitas tinggi" },
   { id: "ETH", name: "ETH · Ethereum", category: "crypto", symbol: "ETH-USD", detail: "Kripto · USD · volatilitas tinggi" },
-  { id: "antam", name: "Emas Antam", category: "emas", detail: "Logam Mulia · IDR / gram" },
+  { id: "antam", name: "Emas Antam 1gr", category: "emas", detail: "Logam Mulia · IDR / 1 gram" },
+  { id: "antam-5gr", name: "Emas Antam 5gr", category: "emas", detail: "Logam Mulia · IDR / 5 gram" },
+  { id: "pegadaian", name: "Emas Pegadaian", category: "emas", detail: "Pegadaian · IDR / gram" },
 ];
 export interface PricePoint { time: number; price: number }
 export interface InstrumentStats {
   id: string; price: number | null; currency: string; month: number | null; year: number | null;
   history: PricePoint[]; updatedAt: number | null; error: string | null;
 }
+// Fixed education examples, independent of the simulation game's trading state.
+export const EDUCATION_STATS: InstrumentStats[] = [
+  { id: "rd-pu", price: 1582, month: 0.31, year: 5.2, values: [1580,1581,1582,1582,1583] },
+  { id: "rd-pt", price: 1734, month: 0.45, year: 6.8, values: [1720,1725,1730,1732,1734] },
+  { id: "rd-cp", price: 2105, month: 1.2, year: 8.1, values: [2050,2070,2090,2080,2105] },
+  { id: "rd-sh", price: 1890, month: 2.1, year: 12.4, values: [1800,1820,1850,1870,1890] },
+  { id: "antam", price: 1420000, month: 0.8, year: 18.5, values: [1380000,1395000,1405000,1410000,1420000] },
+  { id: "antam-5gr", price: 6950000, month: null, year: null, values: [] },
+  { id: "pegadaian", price: 1415000, month: null, year: null, values: [] },
+].map(({ values, ...stats }) => ({ ...stats, currency: "IDR", history: values.map((price, time) => ({ time, price })), updatedAt: null, error: null }));
+export const isEducationCategory = (category: InvestmentCategory) => category === "reksadana" || category === "emas";
+export const educationStats = (category: InvestmentCategory) => EDUCATION_STATS.filter((stats) => INSTRUMENTS.some((instrument) => instrument.id === stats.id && instrument.category === category));
 export function emptyStats(instrument: Instrument): InstrumentStats {
+  const example = EDUCATION_STATS.find((stats) => stats.id === instrument.id);
+  if (example) return example;
   return { id: instrument.id, price: null, currency: instrument.category === "crypto" ? "USD" : "IDR", month: null, year: null, history: [], updatedAt: null,
-    error: instrument.category === "reksadana" ? "NAB belum tersedia — pilih produk reksadana spesifik dari penyedia data." : instrument.category === "emas" ? "Harga resmi Antam belum terhubung." : "Sumber harga sedang tidak tersedia." };
+    error: "Sumber harga sedang tidak tersedia." };
 }
 export function marketSchedule(category: InvestmentCategory, now: Date) {
   if (category === "crypto") return { open: true, label: "Buka · 24/7", next: "" };

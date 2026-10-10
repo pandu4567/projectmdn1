@@ -10,9 +10,9 @@ import { emptyProfile, JOBS, loadProfile, rp, incomeLabel, isStudent, saveProfil
 export const Route = createFileRoute("/onboarding")({
   head: () => ({
     meta: [
-      { title: "Mulai — SAKU 5 WARNA PRO" },
+      { title: "Mulai — EASY FINMA" },
       { name: "description", content: "Isi profil, pengeluaran, dan asuransi untuk rekomendasi alokasi 5 kantong." },
-      { property: "og:title", content: "Mulai — SAKU 5 WARNA PRO" },
+      { property: "og:title", content: "Mulai — EASY FINMA" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:description", content: "Wizard 4 langkah untuk alokasi keuangan otomatis." },
@@ -67,7 +67,8 @@ function Onboarding() {
 
   return (
     <div className="mx-auto min-h-screen max-w-md px-4 pb-10 pt-6">
-      <p className="text-xs font-bold tracking-widest text-muted-foreground">SAKU 5 WARNA PRO</p>
+      <p className="text-lg font-extrabold">EASY FINMA</p>
+      <p className="text-[11px] text-muted-foreground">Financial Management</p>
       <h1 className="mt-1 text-2xl font-extrabold">{STEPS[step]}</h1>
       <div className="mt-3 flex gap-1.5">
         {STEPS.map((_, i) => (
@@ -142,7 +143,7 @@ function Onboarding() {
                 </div>
               ))}
             </Panel>
-            <h2 className="font-bold">Rekomendasi Alokasi SAKU 5 WARNA</h2>
+            <h2 className="font-bold">Rekomendasi Alokasi EASY FINMA</h2>
             <AllocationEditor sisa={s.sisa} value={p.alokasi} onChange={(alokasi) => setP({ ...p, alokasi })} />
             <h2 className="font-bold">Saran Penyimpanan</h2>
             <StorageSuggestions />

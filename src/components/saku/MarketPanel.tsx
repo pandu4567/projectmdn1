@@ -94,7 +94,6 @@ export function MarketPanel({ profile, save }: { profile: Profile; save: (p: Pro
           );
         })}
       </div>
-      <p className="mt-2 flex items-center gap-1 text-[10px] text-muted-foreground"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-investasi" /> Harga simulasi · update tiap 10 detik</p>
     </Panel>
   );
 }
