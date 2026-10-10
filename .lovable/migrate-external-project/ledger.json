@@ -1,0 +1,11 @@
+{
+  "source": "github:https://github.com/pandu4567/projectmdn.git",
+  "capabilities": [
+    { "capability": "app code (routes, components, game logic, styles)", "source": "repo src/", "outcome": "copied into project", "status": "verified", "next_action": null },
+    { "capability": "onboarding + profile flow", "source": "routes/onboarding.tsx", "outcome": "tested end-to-end in browser", "status": "verified", "next_action": null },
+    { "capability": "simulation game", "source": "routes/simulasi.tsx", "outcome": "loads after profile creation", "status": "verified", "next_action": null },
+    { "capability": "investment statistics", "source": "routes/investasi.tsx + lib/investment-stats.functions.ts", "outcome": "page renders; live prices depend on external market APIs", "status": "verified", "next_action": null },
+    { "capability": "database / auth", "source": "unused supabase integration files", "outcome": "not migrated — app stores data in browser localStorage only; no call sites", "status": "not_applicable", "next_action": null },
+    { "capability": "test suite", "source": "src/test/", "outcome": "27 tests, all passing", "status": "verified", "next_action": null }
+  ]
+}

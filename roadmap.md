@@ -1,0 +1,10 @@
+- [x] Optimalkan kartu simulasi dan kartu keuangan untuk HP tanpa menghapus kontrol.
+- [x] Tambahkan suara kartu opsional, nonaktif saat mulai.
+- [x] Verifikasi kartu, jeda/alokasi, dan suara melalui aplikasi.- [x] Hapus tulisan AI, footer © 2026 Money Spectrum Hub.
+- [x] Pasar investasi: 4 reksadana, 5 saham, 5 crypto dengan Beli/Jual ke Tabungan.
+- [x] Latar kota sore low-poly di game.
+- [x] Penanda bulan: kalender mini, titik kartu, transisi bulan + ding.
+- [x] Tombol Alokasi berubah jadi "Reset ke Default".
+- [x] Ubah Investasi ke statistik tanpa jual beli, 17 instrumen dan status pasar WIB; harga nyata saham/kripto.
+- [x] Uji filter, jam pasar, format harga, serta data profil tetap utuh.
+- [ ] Harga reksadana dan Antam: menunggu produk reksadana spesifik serta akses penyedia harga resmi; tampilkan belum tersedia, bukan angka simulasi.
