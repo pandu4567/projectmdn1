@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlokasiRouteImport } from './routes/alokasi'
+import { Route as AsuransiRouteImport } from './routes/asuransi'
+import { Route as InvestasiRouteImport } from './routes/investasi'
+import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as ProfilRouteImport } from './routes/profil'
+import { Route as SimulasiRouteImport } from './routes/simulasi'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlokasiRoute = AlokasiRouteImport.update({
+  id: '/alokasi',
+  path: '/alokasi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AsuransiRoute = AsuransiRouteImport.update({
+  id: '/asuransi',
+  path: '/asuransi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestasiRoute = InvestasiRouteImport.update({
+  id: '/investasi',
+  path: '/investasi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoute = OnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfilRoute = ProfilRouteImport.update({
+  id: '/profil',
+  path: '/profil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulasiRoute = SimulasiRouteImport.update({
+  id: '/simulasi',
+  path: '/simulasi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alokasi': typeof AlokasiRoute
+  '/asuransi': typeof AsuransiRoute
+  '/investasi': typeof InvestasiRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profil': typeof ProfilRoute
+  '/simulasi': typeof SimulasiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alokasi': typeof AlokasiRoute
+  '/asuransi': typeof AsuransiRoute
+  '/investasi': typeof InvestasiRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profil': typeof ProfilRoute
+  '/simulasi': typeof SimulasiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alokasi': typeof AlokasiRoute
+  '/asuransi': typeof AsuransiRoute
+  '/investasi': typeof InvestasiRoute
+  '/onboarding': typeof OnboardingRoute
+  '/profil': typeof ProfilRoute
+  '/simulasi': typeof SimulasiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/alokasi'
+    | '/asuransi'
+    | '/investasi'
+    | '/onboarding'
+    | '/profil'
+    | '/simulasi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/alokasi'
+    | '/asuransi'
+    | '/investasi'
+    | '/onboarding'
+    | '/profil'
+    | '/simulasi'
+  id:
+    | '__root__'
+    | '/'
+    | '/alokasi'
+    | '/asuransi'
+    | '/investasi'
+    | '/onboarding'
+    | '/profil'
+    | '/simulasi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlokasiRoute: typeof AlokasiRoute
+  AsuransiRoute: typeof AsuransiRoute
+  InvestasiRoute: typeof InvestasiRoute
+  OnboardingRoute: typeof OnboardingRoute
+  ProfilRoute: typeof ProfilRoute
+  SimulasiRoute: typeof SimulasiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alokasi': {
+      id: '/alokasi'
+      path: '/alokasi'
+      fullPath: '/alokasi'
+      preLoaderRoute: typeof AlokasiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/asuransi': {
+      id: '/asuransi'
+      path: '/asuransi'
+      fullPath: '/asuransi'
+      preLoaderRoute: typeof AsuransiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investasi': {
+      id: '/investasi'
+      path: '/investasi'
+      fullPath: '/investasi'
+      preLoaderRoute: typeof InvestasiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding': {
+      id: '/onboarding'
+      path: '/onboarding'
+      fullPath: '/onboarding'
+      preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profil': {
+      id: '/profil'
+      path: '/profil'
+      fullPath: '/profil'
+      preLoaderRoute: typeof ProfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulasi': {
+      id: '/simulasi'
+      path: '/simulasi'
+      fullPath: '/simulasi'
+      preLoaderRoute: typeof SimulasiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlokasiRoute: AlokasiRoute,
+  AsuransiRoute: AsuransiRoute,
+  InvestasiRoute: InvestasiRoute,
+  OnboardingRoute: OnboardingRoute,
+  ProfilRoute: ProfilRoute,
+  SimulasiRoute: SimulasiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
