@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Suspense, useEffect, useState } from "react";
-import { Line, LineChart, ResponsiveContainer } from "recharts";
+import { Line, LineChart, ResponsiveContainer, YAxis } from "recharts";
 import { RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AppShell } from "@/components/saku/AppShell";
@@ -50,7 +50,7 @@ function Statistics({ category }: { category: InvestmentCategory }) {
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0 flex-1"><h3 className="text-sm font-bold leading-5">{instrument.name}</h3><p className="mt-1 text-[10px] text-muted-foreground">{instrument.detail}</p></div>
             {((stats?.history.length ?? 0) > 1 || !educational) && <div className="h-10 w-20 shrink-0" aria-label="Grafik harga 1 bulan">
-              {(stats?.history.length ?? 0) > 1 && <ResponsiveContainer width="100%" height="100%"><LineChart data={stats?.history ?? []}><Line type="monotone" dataKey="price" dot={false} strokeWidth={2} stroke={(stats?.month ?? 0) >= 0 ? "var(--success)" : "var(--destructive)"} isAnimationActive={false} /></LineChart></ResponsiveContainer>}
+              {(stats?.history.length ?? 0) > 1 && <ResponsiveContainer width="100%" height="100%"><LineChart data={stats?.history ?? []}>{educational && <YAxis hide domain={["dataMin", "dataMax"]} />}<Line type="monotone" dataKey="price" dot={false} strokeWidth={2} stroke={(stats?.month ?? 0) >= 0 ? "var(--success)" : "var(--destructive)"} isAnimationActive={false} /></LineChart></ResponsiveContainer>}
             </div>}
           </div>
           <p className="mt-4 text-[11px] text-muted-foreground">{category === "reksadana" ? "NAB" : "Harga saat ini"}</p>

@@ -8,6 +8,6 @@
 - [x] Tombol Alokasi berubah jadi "Reset ke Default".
 - [x] Ubah Investasi ke statistik tanpa jual beli, 17 instrumen dan status pasar WIB; harga nyata saham/kripto.
 - [x] Uji filter, jam pasar, format harga, serta data profil tetap utuh.
-- [ ] Pasang data edukasi statis reksadana/emas dan uji nilai serta grafik.
-- [ ] Rebranding EASY FINMA, metadata, manifest, dan migrasi penyimpanan lama tanpa kehilangan data.
+- [x] Pasang data edukasi statis reksadana/emas dan uji nilai serta grafik.
+- [x] Rebranding EASY FINMA, metadata, manifest, dan migrasi penyimpanan lama tanpa kehilangan data.
 - [ ] Ganti seluruh ikon: menunggu unggahan ikon handmade dari pengguna.
