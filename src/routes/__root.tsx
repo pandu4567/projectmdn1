@@ -79,11 +79,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Money Spectrum Hub - Five Color Finance" },
-      { name: "description", content: "Kelola uang dengan 5 kantong warna dan simulasi keuangan 1 tahun." },
-      { name: "author", content: "Money Spectrum Hub" },
-      { property: "og:title", content: "Money Spectrum Hub - Five Color Finance" },
-      { property: "og:description", content: "Kelola uang dengan 5 kantong warna dan simulasi keuangan 1 tahun." },
+      { title: "EASY FINMA - Financial Management Made Easy" },
+      { name: "description", content: "EASY FINMA (FINMA = Financial Management) - Kelola keuangan 5 saku" },
+      { name: "author", content: "EASY FINMA" },
+      { property: "og:title", content: "EASY FINMA - Financial Management Made Easy" },
+      { property: "og:description", content: "EASY FINMA (FINMA = Financial Management) - Kelola keuangan 5 saku" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -93,6 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "manifest", href: "/manifest.json" },
     ],
   }),
   shellComponent: RootShell,
@@ -103,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <HeadContent />
       </head>

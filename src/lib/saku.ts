@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { migrateFinmaStorage, readStoredObject } from "@/lib/finma-storage";
 
 export type Job = "mahasiswa" | "kantoran" | "pedagang" | "buruh" | "guru" | "freelancer";
 export const JOBS: { v: Job; l: string }[] = [
@@ -95,22 +96,47 @@ export const short = (n: number) => {
   return s + Math.round(a);
 };
 
-const KEY = "saku5-profile";
+const KEY = "finma_profile";
+const EXPENSE_FIELDS = ["tinggal", "utilitas", "makan", "cicilan", "transport", "pajak"] as const;
 export function loadProfile(): Profile | null {
   if (typeof window === "undefined") return null;
   try {
-    const raw = localStorage.getItem(KEY);
-    return raw ? { ...emptyProfile(), ...JSON.parse(raw) } : null;
+    migrateFinmaStorage(localStorage);
+    const raw = readStoredObject(localStorage, KEY);
+    if (!raw) return null;
+    const profile = { ...emptyProfile(), ...raw } as Profile;
+    const expenses = readStoredObject(localStorage, "finma_expenses");
+    for (const field of EXPENSE_FIELDS) {
+      const value = expenses?.[field];
+      if (typeof value === "number" && Number.isFinite(value)) profile[field] = value;
+    }
+    const allocation = readStoredObject(localStorage, "finma_allocation");
+    profile.alokasi = { ...DEFAULT_ALOKASI, ...profile.alokasi };
+    for (const { key } of POCKETS) {
+      const value = allocation?.[key];
+      if (typeof value === "number" && Number.isFinite(value)) profile.alokasi[key] = value;
+    }
+    // Populate the new slices for the existing combined legacy profile.
+    if (!expenses) localStorage.setItem("finma_expenses", JSON.stringify(Object.fromEntries(EXPENSE_FIELDS.map((key) => [key, profile[key]]))));
+    if (!allocation) localStorage.setItem("finma_allocation", JSON.stringify(profile.alokasi));
+    localStorage.setItem(KEY, JSON.stringify(profile));
+    return profile;
   } catch {
     return null;
   }
 }
 export function saveProfile(p: Profile) {
+  migrateFinmaStorage(localStorage);
   localStorage.setItem(KEY, JSON.stringify(p));
+  localStorage.setItem("finma_expenses", JSON.stringify(Object.fromEntries(EXPENSE_FIELDS.map((key) => [key, p[key]]))));
+  localStorage.setItem("finma_allocation", JSON.stringify(p.alokasi));
   window.dispatchEvent(new Event("saku-update"));
 }
 export function clearProfile() {
+  migrateFinmaStorage(localStorage);
   localStorage.removeItem(KEY);
+  localStorage.removeItem("finma_expenses");
+  localStorage.removeItem("finma_allocation");
   window.dispatchEvent(new Event("saku-update"));
 }
 

@@ -7,9 +7,9 @@ import { clearProfile, isStudent, jobLabel, rp, useProfile } from "@/lib/saku";
 export const Route = createFileRoute("/profil")({
   head: () => ({
     meta: [
-      { title: "Profil — SAKU 5 WARNA PRO" },
+      { title: "Profil — EASY FINMA" },
       { name: "description", content: "Lihat dan ubah data profil keuanganmu." },
-      { property: "og:title", content: "Profil — SAKU 5 WARNA PRO" },
+      { property: "og:title", content: "Profil — EASY FINMA" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:description", content: "Lihat dan ubah data profil keuanganmu." },

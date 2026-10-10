@@ -7,9 +7,9 @@ import { rp } from "@/lib/saku";
 export const Route = createFileRoute("/asuransi")({
   head: () => ({
     meta: [
-      { title: "Asuransi — SAKU 5 WARNA PRO" },
+      { title: "Asuransi — EASY FINMA" },
       { name: "description", content: "Survei singkat 5 pertanyaan untuk rekomendasi asuransi syariah atau konvensional beserta premi per bulan." },
-      { property: "og:title", content: "Asuransi — SAKU 5 WARNA PRO" },
+      { property: "og:title", content: "Asuransi — EASY FINMA" },
       { property: "og:description", content: "Rekomendasi asuransi syariah/konvensional dan estimasi premi bulanan." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

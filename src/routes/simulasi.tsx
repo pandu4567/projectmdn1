@@ -18,9 +18,9 @@ import { jobLabel, short, sortir, useProfile, type Profile } from "@/lib/saku";
 export const Route = createFileRoute("/simulasi")({
   head: () => ({
     meta: [
-      { title: "Perjalanan 1 Tahun — SAKU 5 WARNA PRO" },
+      { title: "Perjalanan 1 Tahun — EASY FINMA" },
       { name: "description", content: "Game simulasi: kelola uang 12 bulan dan jaga kebahagiaanmu tetap di atas 10." },
-      { property: "og:title", content: "Perjalanan 1 Tahun — SAKU 5 WARNA PRO" },
+      { property: "og:title", content: "Perjalanan 1 Tahun — EASY FINMA" },
       { property: "og:description", content: "Game simulasi keuangan 12 bulan." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
