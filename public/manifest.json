@@ -1,0 +1,11 @@
+{
+  "name": "EASY FINMA",
+  "short_name": "FINMA",
+  "description": "EASY FINMA (FINMA = Financial Management) - Kelola keuangan 5 saku",
+  "lang": "id",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "16x16 32x32 48x48", "type": "image/x-icon" }
+  ]
+}
