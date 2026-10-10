@@ -4,21 +4,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -46,6 +33,28 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-soft: var(--ink-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger-soft: var(--danger-soft);
+  --color-darurat: var(--darurat);
+  --color-investasi: var(--investasi);
+  --color-tabungan: var(--tabungan);
+  --color-hidup: var(--hidup);
+  --color-reward: var(--reward);
+  --color-darurat-soft: var(--darurat-soft);
+  --color-investasi-soft: var(--investasi-soft);
+  --color-tabungan-soft: var(--tabungan-soft);
+  --color-hidup-soft: var(--hidup-soft);
+  --color-reward-soft: var(--reward-soft);
+  --color-sky: var(--sky);
+  --color-grass: var(--grass);
+  --color-road: var(--road);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -62,83 +71,246 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
-}
+  --radius: 0.75rem;
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #0f172a;
+  --primary-foreground: #ffffff;
+  --secondary: #f8fafc;
+  --secondary-foreground: #0f172a;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  --destructive: #ff5a5f;
+  --destructive-foreground: #ffffff;
+  --border: #f1f5f9;
+  --input: #e2e8f0;
+  --ring: #94a3b8;
 
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --ink: #0f172a;
+  --ink-foreground: #ffffff;
+  --ink-muted: #94a3b8;
+  --ink-soft: #1e293b;
+  --success: #16a34a;
+  --success-soft: #dcfce7;
+  --warning: #d97706;
+  --warning-soft: #fef3c7;
+  --danger-soft: #ffe4e6;
+
+  --darurat: #ff5a5f;
+  --investasi: #2ecc71;
+  --tabungan: #3498db;
+  --hidup: #f1c40f;
+  --reward: #ff8da1;
+  --darurat-soft: #fff0f0;
+  --investasi-soft: #ebfaf1;
+  --tabungan-soft: #ebf5fc;
+  --hidup-soft: #fef9e6;
+  --reward-soft: #fff1f4;
+
+  --sky: #dbeafe;
+  --grass: #bbf7d0;
+  --road: #cbd5e1;
+
+  --chart-1: #ff5a5f;
+  --chart-2: #2ecc71;
+  --chart-3: #3498db;
+  --chart-4: #f1c40f;
+  --chart-5: #ff8da1;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #0f172a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #f1f5f9;
+  --sidebar-ring: #94a3b8;
+  --shadow-float: 0 10px 30px -8px rgb(15 23 42 / 0.18);
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
   }
-
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
   }
 }
+
+@utility shadow-float {
+  box-shadow: var(--shadow-float);
+}
+
+@keyframes card-drop {
+  0% { transform: translateY(-110vh) rotate(-8deg); opacity: 0; }
+  70% { transform: translateY(12px) rotate(2deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
+}
+@utility animate-card-drop {
+  animation: card-drop 0.75s cubic-bezier(0.2, 0.9, 0.3, 1.1) both;
+}
+
+@keyframes road-move {
+  from { background-position: 0 0; }
+  to { background-position: 0 80px; }
+}
+@utility road-lines {
+  background-image: repeating-linear-gradient(to bottom, var(--background) 0 40px, transparent 40px 80px);
+}
+@utility animate-road {
+  animation: road-move 0.6s linear infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@utility animate-bob {
+  animation: bob 0.5s ease-in-out infinite;
+}
+@keyframes leg-a {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@utility animate-leg-a {
+  animation: leg-a 0.5s ease-in-out infinite;
+}
+@utility animate-leg-b {
+  animation: leg-a 0.5s ease-in-out infinite 0.25s;
+}
+
+/* ===== TPP behind-the-back scene ===== */
+@utility scene-sky {
+  background: linear-gradient(to bottom, var(--tabungan-soft, var(--sky)) 0%, var(--sky) 100%);
+}
+@utility road-plane {
+  transform: perspective(260px) rotateX(62deg);
+  transform-origin: 50% 100%;
+}
+@utility road-stripes {
+  background-image:
+    linear-gradient(var(--background), var(--background));
+  background-size: 100% 120px;
+  -webkit-mask-image: repeating-linear-gradient(to bottom, #000 0 60px, transparent 60px 120px);
+  mask-image: repeating-linear-gradient(to bottom, #000 0 60px, transparent 60px 120px);
+}
+@keyframes stripe-move {
+  from { -webkit-mask-position: 0 0; mask-position: 0 0; }
+  to { -webkit-mask-position: 0 120px; mask-position: 0 120px; }
+}
+@utility animate-stripes {
+  animation: stripe-move 0.5s linear infinite;
+}
+@keyframes side-left {
+  0% { left: 46%; bottom: 55%; transform: translate(-50%, 0) scale(0.08); opacity: 0; }
+  10% { opacity: 1; }
+  100% { left: -15%; bottom: -10%; transform: translate(-50%, 0) scale(1.6); opacity: 1; }
+}
+@keyframes side-right {
+  0% { left: 54%; bottom: 55%; transform: translate(-50%, 0) scale(0.08); opacity: 0; }
+  10% { opacity: 1; }
+  100% { left: 115%; bottom: -10%; transform: translate(-50%, 0) scale(1.6); opacity: 1; }
+}
+@utility animate-side-left {
+  animation: side-left 3s cubic-bezier(0.55, 0, 1, 0.6) infinite;
+}
+@utility animate-side-right {
+  animation: side-right 3s cubic-bezier(0.55, 0, 1, 0.6) infinite;
+}
+@utility anim-paused {
+  animation-play-state: paused !important;
+}
+@keyframes card-fall {
+  0% { transform: translateY(-120vh) rotate(-14deg) scale(0.9); opacity: 0; }
+  55% { transform: translateY(18px) rotate(4deg) scale(1); opacity: 1; }
+  75% { transform: translateY(-8px) rotate(-2deg); }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
+}
+@utility animate-card-fall {
+  animation: card-fall 0.9s cubic-bezier(0.3, 0.8, 0.4, 1) both;
+}
+@keyframes icon-pop {
+  0%, 50% { transform: scale(0.3); }
+  80% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+@utility animate-icon-pop {
+  animation: icon-pop 1s ease-out both;
+}
+
+.game-card-scale { transform: scale(1); }
+@media (max-width: 639px) {
+  .game-card-scale { transform: scale(0.9); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-card-fall, .animate-icon-pop { animation: none; }
+}
+
+/* ===== City scene (sunset low-poly) ===== */
+:root {
+  --sunset-top: #3b4a8c;
+  --sunset-mid: #f08a5d;
+  --sunset-low: #ffd29d;
+  --sun: #ffe8a3;
+  --cloud: #fff4ea;
+  --skyline: #6b5b95;
+  --building-a: #e9c46a;
+  --building-b: #8ecae6;
+  --building-c: #f4a261;
+  --building-shade: rgb(15 23 42 / 0.28);
+  --window: #fff7cc;
+  --sidewalk: #e2d6c8;
+  --curb: #b8a99a;
+  --lamp: #334155;
+  --lamp-glow: #fde68a;
+}
+@utility scene-sunset {
+  background: linear-gradient(to bottom, var(--sunset-top) 0%, var(--sunset-mid) 30%, var(--sunset-low) 45%);
+}
+@utility bg-sidewalk { background-color: var(--sidewalk); }
+@utility bg-curb { background-color: var(--curb); }
+@utility bg-skyline { background-color: var(--skyline); }
+@utility bg-sun { background-color: var(--sun); box-shadow: 0 0 60px 20px var(--sun); }
+@keyframes cloud-drift {
+  from { transform: translateX(-30vw); }
+  to { transform: translateX(130vw); }
+}
+@utility animate-cloud { animation: cloud-drift 60s linear infinite; }
+@keyframes skyline-drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-6px); }
+}
+@utility animate-skyline { animation: skyline-drift 8s ease-in-out infinite; }
+@keyframes bld-left {
+  0% { left: 43%; bottom: 55%; transform: translate(-50%, 0) scale(0.06); opacity: 0; }
+  12% { opacity: 1; }
+  100% { left: -45%; bottom: -12%; transform: translate(-50%, 0) scale(2); opacity: 1; }
+}
+@keyframes bld-right {
+  0% { left: 57%; bottom: 55%; transform: translate(-50%, 0) scale(0.06); opacity: 0; }
+  12% { opacity: 1; }
+  100% { left: 145%; bottom: -12%; transform: translate(-50%, 0) scale(2); opacity: 1; }
+}
+@utility animate-bld-left { animation: bld-left 5s cubic-bezier(0.55, 0, 1, 0.6) infinite; }
+@utility animate-bld-right { animation: bld-right 5s cubic-bezier(0.55, 0, 1, 0.6) infinite; }
+
+/* ===== Month progress ===== */
+@keyframes dot-blink {
+  0%, 100% { background-color: var(--hidup); transform: scale(1); }
+  50% { background-color: var(--warning-soft); transform: scale(1.35); }
+}
+@utility animate-dot-blink { animation: dot-blink 0.7s ease-in-out infinite; }
+@keyframes month-in {
+  0% { transform: scale(0.4); opacity: 0; letter-spacing: 0.6em; }
+  25% { transform: scale(1.1); opacity: 1; }
+  80% { transform: scale(1); opacity: 1; letter-spacing: 0.15em; }
+  100% { transform: scale(1.05); opacity: 0; }
+}
+@utility animate-month-in { animation: month-in 2s ease-out both; }
