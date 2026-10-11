@@ -5,7 +5,6 @@ import { Line, LineChart, ResponsiveContainer, YAxis } from "recharts";
 import { RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AppShell } from "@/components/saku/AppShell";
-import { rp, useProfile } from "@/lib/saku";
 import { INSTRUMENTS, INVESTMENT_TABS, formatChange, formatStatPrice, isEducationCategory, marketSchedule, type InvestmentCategory, type InstrumentStats } from "@/lib/investment-stats";
 import { investmentStatsOptions } from "@/lib/investment-stats.query";
 
