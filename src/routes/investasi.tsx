@@ -5,7 +5,6 @@ import { Line, LineChart, ResponsiveContainer, YAxis } from "recharts";
 import { RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AppShell } from "@/components/saku/AppShell";
-import { rp, useProfile } from "@/lib/saku";
 import { INSTRUMENTS, INVESTMENT_TABS, formatChange, formatStatPrice, isEducationCategory, marketSchedule, type InvestmentCategory, type InstrumentStats } from "@/lib/investment-stats";
 import { investmentStatsOptions } from "@/lib/investment-stats.query";
 
@@ -72,6 +71,7 @@ function Statistics({ category }: { category: InvestmentCategory }) {
 }
 
 function Investasi() {
+  const [category, setCategory] = useState<InvestmentCategory>("reksadana");
   return <AppShell title="Investasi">
     <section className="mt-2" aria-labelledby="investment-heading">
       <h2 id="investment-heading" className="mb-3 font-bold">Alokasikan dana ke</h2>
