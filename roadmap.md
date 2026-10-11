@@ -10,4 +10,4 @@
 - [x] Uji filter, jam pasar, format harga, serta data profil tetap utuh.
 - [x] Pasang data edukasi statis reksadana/emas dan uji nilai serta grafik.
 - [x] Rebranding EASY FINMA, metadata, manifest, dan migrasi penyimpanan lama tanpa kehilangan data.
-- [ ] Ganti seluruh ikon: menunggu unggahan ikon handmade dari pengguna.
+- [x] Ganti seluruh ikon dengan ikon handmade FINMA yang diunggah (favicon, 192, 512, apple-touch, manifest, navbar).
