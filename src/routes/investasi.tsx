@@ -72,12 +72,8 @@ function Statistics({ category }: { category: InvestmentCategory }) {
 }
 
 function Investasi() {
-  const { profile } = useProfile();
-  const [category, setCategory] = useState<InvestmentCategory>("reksadana");
-  const total = Object.values(profile?.portfolio ?? {}).reduce((sum, value) => sum + value, 0);
   return <AppShell title="Investasi">
-    <header className="rounded-2xl bg-ink p-5 text-ink-foreground"><p className="text-xs text-ink-muted">Total investasi yang dimiliki</p><p className="mt-1 text-3xl font-extrabold">{rp(total)}</p></header>
-    <section className="mt-6" aria-labelledby="investment-heading">
+    <section className="mt-2" aria-labelledby="investment-heading">
       <h2 id="investment-heading" className="mb-3 font-bold">Alokasikan dana ke</h2>
       <div className="grid grid-cols-4 gap-1" role="tablist" aria-label="Kategori investasi">
         {INVESTMENT_TABS.map((tab) => <Button key={tab.key} role="tab" aria-selected={category === tab.key} size="sm" variant={category === tab.key ? "default" : "secondary"} className="h-9 min-w-0 rounded-lg px-1 text-[11px]" onClick={() => setCategory(tab.key)}>{tab.label}</Button>)}
