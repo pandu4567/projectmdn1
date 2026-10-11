@@ -72,6 +72,7 @@ function Statistics({ category }: { category: InvestmentCategory }) {
 }
 
 function Investasi() {
+  const [category, setCategory] = useState<InvestmentCategory>("reksadana");
   return <AppShell title="Investasi">
     <section className="mt-2" aria-labelledby="investment-heading">
       <h2 id="investment-heading" className="mb-3 font-bold">Alokasikan dana ke</h2>
