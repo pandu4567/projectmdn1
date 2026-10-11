@@ -14,9 +14,6 @@ export function AppShell({ children, title }: { children: ReactNode; title?: str
   return (
     <div className="min-h-screen bg-background">
       <main className="mx-auto max-w-md px-4 pb-32 pt-6">
-        <header className="mb-5 border-b border-border pb-3">
-          <img src="/icon-192.png" alt="EASY FINMA" className="h-10 w-10 rounded-xl object-contain" />
-        </header>
         {title && <h1 className="mb-4 text-2xl font-extrabold tracking-tight">{title}</h1>}
         {children}
         <footer className="mt-8 text-center text-[11px] text-muted-foreground">© 2026 EASY FINMA - Financial Management</footer>
