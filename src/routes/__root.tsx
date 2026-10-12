@@ -85,6 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "EASY FINMA - Financial Management Made Easy" },
       { property: "og:description", content: "EASY FINMA (FINMA = Financial Management) - Kelola keuangan 5 saku" },
       { property: "og:type", content: "website" },
+      { name: "theme-color", content: "#0F172A" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -94,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-      { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "manifest", href: "/manifest.json" },
     ],
   }),
   shellComponent: RootShell,
