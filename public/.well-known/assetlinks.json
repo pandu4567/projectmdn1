@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.vercel.easyfinma.twa",
+    "sha256_cert_fingerprints": ["74:73:1D:B7:A6:65:43:1E:B3:0F:4B:74:E6:5D:44:CF:2F:4A:D0:1F:CB:BB:87:47:3E:70:5D:5E:C2:78:ED:3C"]
+  }
+}]
